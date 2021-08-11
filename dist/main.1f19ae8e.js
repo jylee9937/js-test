@@ -117,39 +117,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"getType.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getType;
-
-function getType(data) {
-  return Object.prototype.toString.call(data).slice(8, -1);
-}
-},{}],"main.js":[function(require,module,exports) {
-"use strict";
-
-var _getType = _interopRequireDefault(require("./getType"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-console.log(_typeof('Hello World!'));
-console.log(_typeof(123));
-console.log(typeof undefined === "undefined" ? "undefined" : _typeof(undefined));
-console.log(_typeof(true));
-console.log(_typeof(null));
-console.log(_typeof({}));
-console.log(_typeof([]));
-console.log((0, _getType.default)(123));
-console.log((0, _getType.default)(false));
-console.log((0, _getType.default)(null));
-console.log((0, _getType.default)({}));
-console.log((0, _getType.default)([]));
-},{"./getType":"getType.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"main.js":[function(require,module,exports) {
+// 산술 연산자(arithmetic operator)
+console.log(1 + 2);
+console.log(5 - 7);
+console.log(3 * 4);
+console.log(10 / 2);
+console.log(7 % 5);
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -177,7 +152,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49434" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
