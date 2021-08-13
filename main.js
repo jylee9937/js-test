@@ -1,6 +1,13 @@
-// 비교연산자(COMPARISON OPERATOR)
+// 논리연산자(logical operator)
 
-const a = 13
-const b = 13
+const a = 1 === 1
+const b = 'AB' === 'AB'
+const c = true
 
-console.log(a <= b)
+console.log(a)
+console.log(b)
+console.log(c)
+
+console.log('&&: ', a && b && c) // AND
+console.log('||: ', a || b) // OR
+console.log('!: ', !a) // NOT
