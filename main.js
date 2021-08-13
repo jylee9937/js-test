@@ -1,7 +1,6 @@
-// 산술 연산자(arithmetic operator)
+// 비교연산자(COMPARISON OPERATOR)
 
-console.log(1 + 2)
-console.log(5 - 7)
-console.log(3 * 4)
-console.log(10 / 2)
-console.log(7 % 5)
+const a = 13
+const b = 13
+
+console.log(a <= b)
