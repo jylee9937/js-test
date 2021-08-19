@@ -1,7 +1,11 @@
-// 산술 연산자(arithmetic operator)
+// 삼항 연산자(ternary operator)
 
-console.log(1 + 2)
-console.log(5 - 7)
-console.log(3 * 4)
-console.log(10 / 2)
-console.log(7 % 5)
+const a = 1 < 2
+
+if(a){
+  console.log('참')
+} else{
+  console.log('거짓')
+}
+
+console.log(a ? '참' : '거짓')
