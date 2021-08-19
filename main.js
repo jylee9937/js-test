@@ -1,11 +1,11 @@
-// 변수 유효범위(Variable Scope)
-// var 함수레벨의 변수 의도하지 않은 사용이 일어날 수 있고, 메모리 누수가 일어날 수 있음
-// let, const 블록레벨의 변수
+// 형 변환(Type conversion)
 
-function scope(){
-  if(true){
-    const a = 123
-    console.log(a)
-  }
+// Truthy(참 같은 값)
+// true, {}, [], 1, 2, 'false', -12, '3.14' ...
+
+// Falsy(거짓 같은 값)
+// false, '', null, undefined, 0, -0, NaN
+
+if(true){
+  console.log(123)
 }
-scope()
