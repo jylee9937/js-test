@@ -135,17 +135,25 @@ var _getRandom = _interopRequireDefault(require("./getRandom"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// 조건문 (If statrment)
+// 조건문 (Switch statrment)
 var a = (0, _getRandom.default)();
 
-if (a === 0) {
-  console.log('a is 0');
-} else if (a === 2) {
-  console.log('a is 2');
-} else if (a === 4) {
-  console.log('a is 4');
-} else {
-  console.log('rest...');
+switch (a) {
+  case 0:
+    console.log('a is 0');
+    break;
+
+  case 2:
+    console.log('a is 2');
+    break;
+
+  case 4:
+    console.log('a is 4');
+    break;
+
+  default:
+    console.log('rest...');
+    break;
 }
 },{"./getRandom":"getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -175,7 +183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57135" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59146" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
