@@ -1,15 +1,11 @@
-// 반복문 (For statement)
-// For (시작조건; 종료조건; 변화조건) {}
+// 변수 유효범위(Variable Scope)
+// var 함수레벨의 변수 의도하지 않은 사용이 일어날 수 있고, 메모리 누수가 일어날 수 있음
+// let, const 블록레벨의 변수
 
-const ulEl = document.querySelector('ul')
-
-for(let i = 0; i < 10; i += 1){
-  const li = document.createElement('li')
-  li.textContent = `list-${i + 1}`
-  if((i+1) % 2 === 0){
-    li.addEventListener('click', function(){
-      console.log(li.textContent)
-    })
+function scope(){
+  if(true){
+    const a = 123
+    console.log(a)
   }
-  ulEl.appendChild(li)
-} 
+}
+scope()

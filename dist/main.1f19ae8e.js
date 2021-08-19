@@ -118,26 +118,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 반복문 (For statement)
-// For (시작조건; 종료조건; 변화조건) {}
-var ulEl = document.querySelector('ul');
-
-var _loop = function _loop(i) {
-  var li = document.createElement('li');
-  li.textContent = "list-".concat(i + 1);
-
-  if ((i + 1) % 2 === 0) {
-    li.addEventListener('click', function () {
-      console.log(li.textContent);
-    });
+// 변수 유효범위(Variable Scope)
+// var 함수레벨의 변수 의도하지 않은 사용이 일어날 수 있고, 메모리 누수가 일어날 수 있음
+// let, const 블록레벨의 변수
+function scope() {
+  if (true) {
+    var a = 123;
+    console.log(a);
   }
-
-  ulEl.appendChild(li);
-};
-
-for (var i = 0; i < 10; i += 1) {
-  _loop(i);
 }
+
+scope();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -166,7 +157,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63871" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58915" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
