@@ -117,45 +117,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"getRandom.js":[function(require,module,exports) {
-"use strict";
+})({"main.js":[function(require,module,exports) {
+// 반복문 (For statement)
+// For (시작조건; 종료조건; 변화조건) {}
+var ulEl = document.querySelector('ul');
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = random;
+var _loop = function _loop(i) {
+  var li = document.createElement('li');
+  li.textContent = "list-".concat(i + 1);
 
-function random() {
-  return Math.floor(Math.random() * 10);
+  if ((i + 1) % 2 === 0) {
+    li.addEventListener('click', function () {
+      console.log(li.textContent);
+    });
+  }
+
+  ulEl.appendChild(li);
+};
+
+for (var i = 0; i < 10; i += 1) {
+  _loop(i);
 }
-},{}],"main.js":[function(require,module,exports) {
-"use strict";
-
-var _getRandom = _interopRequireDefault(require("./getRandom"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// 조건문 (Switch statrment)
-var a = (0, _getRandom.default)();
-
-switch (a) {
-  case 0:
-    console.log('a is 0');
-    break;
-
-  case 2:
-    console.log('a is 2');
-    break;
-
-  case 4:
-    console.log('a is 4');
-    break;
-
-  default:
-    console.log('rest...');
-    break;
-}
-},{"./getRandom":"getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -183,7 +166,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59146" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63871" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
