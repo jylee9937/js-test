@@ -1,14 +1,16 @@
-// 타이머 함수
-// setTimeout(함수, 시간(ms)): 일정 시간 후 함수 실행
-// setInterval(함수, 시간(ms)): 시간 간격마다 함수 실행
-// clearTimeout(): 설정된 Timeout 함수를 종료
-//  clearInterval(): 설정된 Interval 함수를 종료
+// 콜백(Callback)
+// 함수의 인수로 사용되는 함수
+// 실행 위치를 보장하기 위해 많이 사용된다.
 
-const timer = setInterval(() => {
-    console.log('Heropy !')
-}, 3000)
+// setTimeout(함수, 시간)
 
-const h1El = document.querySelector('h1')
-h1El.addEventListener('click', () => {
-    clearInterval(timer)
-}) // 왜 화살표함수 안에 작성해야 정상적으로 작동하는가?
+function timeout(Callback){
+    setTimeout(() => {
+        console.log('Heropy!')
+        Callback()
+    }, 3000)
+}
+
+timeout(()=>{
+    console.log('Done!')
+})

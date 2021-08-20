@@ -118,18 +118,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 타이머 함수
-// setTimeout(함수, 시간(ms)): 일정 시간 후 함수 실행
-// setInterval(함수, 시간(ms)): 시간 간격마다 함수 실행
-// clearTimeout(): 설정된 Timeout 함수를 종료
-//  clearInterval(): 설정된 Interval 함수를 종료
-var timer = setInterval(function () {
-  console.log('Heropy !');
-}, 3000);
-var h1El = document.querySelector('h1');
-h1El.addEventListener('click', function () {
-  clearInterval(timer);
-}); // 왜 화살표함수 안에 작성해야 정상적으로 작동하는가?
+// 콜백(Callback)
+// 함수의 인수로 사용되는 함수
+// 실행 위치를 보장하기 위해 많이 사용된다.
+// setTimeout(함수, 시간)
+function timeout(Callback) {
+  setTimeout(function () {
+    console.log('Heropy!');
+    Callback();
+  }, 3000);
+}
+
+timeout(function () {
+  console.log('Done!');
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -158,7 +160,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50894" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59528" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
