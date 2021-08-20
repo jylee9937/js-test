@@ -118,26 +118,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 화살표 함수
-// () => {} vs function () {}
-var double = function double(x) {
-  return x * 2;
-};
+// 즉시실행함수
+// IIFE, Immediately-Invoked Function Expression
+// (function(){})()
+// (function(){}())
+var a = 7;
 
-console.log('bouble: ', double(7));
+function double() {
+  console.log(a * 2);
+}
 
-var doubleArrow = function doubleArrow(x) {
-  // return x * 2 // 화살표 함수에서 return문은 생략할 수 있다.
-  x * 2;
-};
+double();
 
-var doubleArrow2 = function doubleArrow2(x) {
-  return x * 2;
-}; // 이렇게 완전축약형도 가능하다.
-// 블록 형태로 만들어지기 때문에 객체 데이터 반환시에는 ()로 감싸줘야 한다.
+(function () {
+  console.log(a * 2);
+})();
 
-
-console.log('doubleArrow', doubleArrow(7));
+(function () {
+  console.log(a * 2);
+})();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -166,7 +165,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57792" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
