@@ -118,25 +118,26 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 함수 복습
-// 기명함수와 익명함수
-function sum() {
-  //x, y는 매개변수
-  return arguments[0] + arguments[1]; // 이렇게 객체 타입으로 매개변수를 받을 수도 있지만 직관적이지 않음
-
-  console.log(); // return 다음에 오는 코드는 실행되지 않음
-}
-
-var sum2 = function sum2(x, y) {
-  return x + y;
+// 화살표 함수
+// () => {} vs function () {}
+var double = function double(x) {
+  return x * 2;
 };
 
-var a = sum(1, 3); // 1, 3은 인수
+console.log('bouble: ', double(7));
 
-var b = sum(4, 12);
-console.log(a);
-console.log(b);
-console.log(sum(4, 12)); // 이 방식은 실행마다 함수를 계산해줘야 하기에 좋은 방법이 아니다.
+var doubleArrow = function doubleArrow(x) {
+  // return x * 2 // 화살표 함수에서 return문은 생략할 수 있다.
+  x * 2;
+};
+
+var doubleArrow2 = function doubleArrow2(x) {
+  return x * 2;
+}; // 이렇게 완전축약형도 가능하다.
+// 블록 형태로 만들어지기 때문에 객체 데이터 반환시에는 ()로 감싸줘야 한다.
+
+
+console.log('doubleArrow', doubleArrow(7));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -165,7 +166,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57688" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56083" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
