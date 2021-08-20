@@ -118,15 +118,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 호이스팅(Hoisting)
-// 함수 선언(부)가 유효범위(SCOPE) 최상단으로 끌어올려지는 현상
-// 함수 선언 vs 함수 표현
-var a = 7;
-double();
-
-function double() {
-  console.log(a * 2);
-}
+// 타이머 함수
+// setTimeout(함수, 시간(ms)): 일정 시간 후 함수 실행
+// setInterval(함수, 시간(ms)): 시간 간격마다 함수 실행
+// clearTimeout(): 설정된 Timeout 함수를 종료
+//  clearInterval(): 설정된 Interval 함수를 종료
+var timer = setInterval(function () {
+  console.log('Heropy !');
+}, 3000);
+var h1El = document.querySelector('h1');
+h1El.addEventListener('click', function () {
+  clearInterval(timer);
+}); // 왜 화살표함수 안에 작성해야 정상적으로 작동하는가?
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -155,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50894" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
