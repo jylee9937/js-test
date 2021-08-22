@@ -118,20 +118,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 콜백(Callback)
-// 함수의 인수로 사용되는 함수
-// 실행 위치를 보장하기 위해 많이 사용된다.
-// setTimeout(함수, 시간)
-function timeout(Callback) {
-  setTimeout(function () {
-    console.log('Heropy!');
-    Callback();
-  }, 3000);
+function User(first, last) {
+  //자바스크립트에서는 생성자는 파스칼케이스로 작성한다.
+  this.firstName = first;
+  this.lastName = last;
 }
 
-timeout(function () {
-  console.log('Done!');
-});
+user.prototype.getFullName = function () {
+  return "".concat(this.firstName, " ").concat(this.lastName);
+}; // prototype에는 객체에서 사용할 수 있는 수많은 함수를 제공한다.
+
+
+var heropy = new user('Heropy', 'Park'); //생성자 함수
+
+var amy = new user('Amy', 'Clarke'); //생성자 함수에서 생성된 값을 할당하는 amy는 인스턴스이다.
+
+var neo = new user('Neo', 'Smith');
+console.log(heropy); // const heropy = {} //객체를 만드는 리터럴 방식이었던 것이다.
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -160,7 +163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59528" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51848" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
