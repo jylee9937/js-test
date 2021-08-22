@@ -1,32 +1,24 @@
-class Vehicle{
-  constructor(name, wheel) {
-    this.name = name
-    this.wheel = wheel
-  }
-}
+// JS 데이터
 
-const myVehicle = new Vehicle('운송수단', 2)
+// String "", '', ``
+// 이렇게 데이터를 만드는 방식을 리터럴 방식이라고 한다.
 
-console.log(myVehicle)
+const result = 'Hello World'.indexOf('World')
 
-class Bicycle extends Vehicle {
-  constructor(name, wheel) {
-    super(name, wheel)
-  }
-}
+console.log(result)
 
-const myBicycle = new Bicycle('삼천리', 2)
-const daughtersBicycle = new Bicycle('세발', 3)
+const str = '01 23'
 
-console.log(myBicycle)
+console.log(str.length)
 
-class Car extends Vehicle {
-  constructor(name, wheel, license) {
-    super(name, wheel)
-    this.license = license
-  }
-}
+const str2 = 'Hello world!'
 
-const myCar = new Car('벤츠', 4, true)
+console.log(str2.indexOf('world') !== -1)
 
-console.log(myCar)
+console.log(str2.slice(0, 3))
+
+console.log(str2.replace(' world!', ''))
+
+const str3 = 'lkj49864@ajou.ac.kr'
+
+console.log(str3.match(/.+(?=@)/)[0])
