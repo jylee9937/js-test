@@ -118,19 +118,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// JS 데이터
-// String "", '', ``
-// 이렇게 데이터를 만드는 방식을 리터럴 방식이라고 한다.
-var result = 'Hello World'.indexOf('World');
-console.log(result);
-var str = '01 23';
-console.log(str.length);
-var str2 = 'Hello world!';
-console.log(str2.indexOf('world') !== -1);
-console.log(str2.slice(0, 3));
-console.log(str2.replace(' world!', ''));
-var str3 = 'lkj49864@ajou.ac.kr';
-console.log(str3.match(/.+(?=@)/)[0]);
+// const pi = 3.14159265358979
+// console.log(pi)
+// const str = pi.toFixed(2)
+// console.log(str)
+// console.log(typeof str)
+// const integer = parseInt(str) //숫자와 관련된 전역함수
+// const float = parseFloat(str)
+// console.log(integer)
+// console.log(float)
+// console.log(typeof integer, typeof float)
+console.log('abs: ', Math.abs(-12)); // 절대값 반환
+
+console.log('min: ', Math.min(2, 8)); // 둘 중에 작은 값 반환
+
+console.log('max: ', Math.max(2, 8)); // 둘 중에 큰 값 반환
+
+console.log('ceil: ', Math.ceil(3.14)); // 올림처리시 사용
+
+console.log('float: ', Math.floor(3.14)); // 내림처리시 사용
+
+console.log('round: ', Math.round(3.14)); // 반올림처리시 사용
+
+console.log('random: ', Math.random()); // 랜덤
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -159,7 +169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50877" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51086" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
