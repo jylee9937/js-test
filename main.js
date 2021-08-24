@@ -39,3 +39,56 @@ const b = fruits.map((fruit, index) => ({
     name: fruit
 }))
 console.log(b)
+
+// .filter()
+
+const c = numbers.map(number => number < 3)
+console.log(c)
+
+const d = numbers.filter(number => number < 3)
+console.log(d)
+
+// .find() .findIndex()
+
+const e = fruits.find(fruit => /^C/.test(fruit))
+console.log(e)
+
+const f = fruits.findIndex(fruit => /^C/.test(fruit))
+console.log(f)
+
+// .includes()
+
+const g = numbers.includes(3)
+console.log(g)
+
+const h = fruits.includes('HEROPY')
+console.log(h)
+
+// .push() .unshift()
+// 원본 수정됨 주의!
+
+numbers.push(5)
+console.log(numbers)
+
+numbers.unshift(0)
+console.log(numbers)
+
+// .reverse()
+// 원본 수정됨 주의!
+
+numbers.reverse()
+fruits.reverse()
+
+console.log(numbers)
+console.log(fruits)
+
+// .splice()
+// 원본 수정됨 주의!
+
+numbers.splice(2, 1)
+
+console.log(numbers)
+
+numbers.splice(2, 2, 999) //끼워놓을 때 사용되기도 함
+ 
+console.log(numbers)

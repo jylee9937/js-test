@@ -154,7 +154,48 @@ var b = fruits.map(function (fruit, index) {
     name: fruit
   };
 });
-console.log(b);
+console.log(b); // .filter()
+
+var c = numbers.map(function (number) {
+  return number < 3;
+});
+console.log(c);
+var d = numbers.filter(function (number) {
+  return number < 3;
+});
+console.log(d); // .find() .findIndex()
+
+var e = fruits.find(function (fruit) {
+  return /^C/.test(fruit);
+});
+console.log(e);
+var f = fruits.findIndex(function (fruit) {
+  return /^C/.test(fruit);
+});
+console.log(f); // .includes()
+
+var g = numbers.includes(3);
+console.log(g);
+var h = fruits.includes('HEROPY');
+console.log(h); // .push() .unshift()
+// 원본 수정됨 주의!
+
+numbers.push(5);
+console.log(numbers);
+numbers.unshift(0);
+console.log(numbers); // .reverse()
+// 원본 수정됨 주의!
+
+numbers.reverse();
+fruits.reverse();
+console.log(numbers);
+console.log(fruits); // .splice()
+// 원본 수정됨 주의!
+
+numbers.splice(2, 1);
+console.log(numbers);
+numbers.splice(2, 2, 999);
+console.log(numbers);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -183,7 +224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56315" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61265" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
