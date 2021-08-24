@@ -1,26 +1,41 @@
-// const pi = 3.14159265358979
-// console.log(pi)
+const numbers = [1, 2, 3, 4]
+const fruits = ['Apple', 'Banana', 'Cherry'] //element(요소)
 
-// const str = pi.toFixed(2)
-// console.log(str)
-// console.log(typeof str)
+console.log(numbers)
+console.log(fruits)
+console.log(numbers[1]) // 인덱스 인덱싱
 
-// const integer = parseInt(str) //숫자와 관련된 전역함수
-// const float = parseFloat(str)
-// console.log(integer)
-// console.log(float)
-// console.log(typeof integer, typeof float)
+numbers.stay = 3
+console.log(numbers)
 
-console.log('abs: ', Math.abs(-12)) // 절대값 반환
+// .length
+//prototype은 리터럴로 생성한 것에 바로 사용할 수 있다.
+console.log([1, 2].length)
 
-console.log('min: ', Math.min(2, 8)) // 둘 중에 작은 값 반환
+console.log([],length) //이것을 통해서 배열이 채워져 있는지 확인한다고 한다.
 
-console.log('max: ', Math.max(2, 8)) // 둘 중에 큰 값 반환
+// .concat()
+console.log(numbers.concat(fruits)) //합쳐주지만 원본 배열 데이터에는 영향이 없음
+console.log(numbers)
+console.log(fruits)
 
-console.log('ceil: ', Math.ceil(3.14)) // 올림처리시 사용
+// .forEach()
+//return 값이 없다.
 
-console.log('float: ', Math.floor(3.14)) // 내림처리시 사용
+fruits.forEach(function (element, index, array) {
+    console.log(element, index, array)
+})
 
-console.log('round: ', Math.round(3.14)) // 반올림처리시 사용
+// .map()
+//return 값으로 배열을 만들어 줌
 
-console.log('random: ', Math.random()) // 랜덤
+const a = fruits.forEach((fruit, index) => {
+    console.log(`${fruit}-${index}`)
+})
+console.log(a)
+
+const b = fruits.map((fruit, index) => ({
+    id: index,
+    name: fruit
+}))
+console.log(b)

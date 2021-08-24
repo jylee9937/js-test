@@ -118,29 +118,43 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// const pi = 3.14159265358979
-// console.log(pi)
-// const str = pi.toFixed(2)
-// console.log(str)
-// console.log(typeof str)
-// const integer = parseInt(str) //숫자와 관련된 전역함수
-// const float = parseFloat(str)
-// console.log(integer)
-// console.log(float)
-// console.log(typeof integer, typeof float)
-console.log('abs: ', Math.abs(-12)); // 절대값 반환
+var numbers = [1, 2, 3, 4];
+var fruits = ['Apple', 'Banana', 'Cherry']; //element(요소)
 
-console.log('min: ', Math.min(2, 8)); // 둘 중에 작은 값 반환
+console.log(numbers);
+console.log(fruits);
+console.log(numbers[1]); // 인덱스 인덱싱
 
-console.log('max: ', Math.max(2, 8)); // 둘 중에 큰 값 반환
+numbers.stay = 3;
+console.log(numbers); // .length
+//prototype은 리터럴로 생성한 것에 바로 사용할 수 있다.
 
-console.log('ceil: ', Math.ceil(3.14)); // 올림처리시 사용
+console.log([1, 2].length);
+console.log([], length); //이것을 통해서 배열이 채워져 있는지 확인한다고 한다.
+// .concat()
 
-console.log('float: ', Math.floor(3.14)); // 내림처리시 사용
+console.log(numbers.concat(fruits)); //합쳐주지만 원본 배열 데이터에는 영향이 없음
 
-console.log('round: ', Math.round(3.14)); // 반올림처리시 사용
+console.log(numbers);
+console.log(fruits); // .forEach()
+//return 값이 없다.
 
-console.log('random: ', Math.random()); // 랜덤
+fruits.forEach(function (element, index, array) {
+  console.log(element, index, array);
+}); // .map()
+//return 값으로 배열을 만들어 줌
+
+var a = fruits.forEach(function (fruit, index) {
+  console.log("".concat(fruit, "-").concat(index));
+});
+console.log(a);
+var b = fruits.map(function (fruit, index) {
+  return {
+    id: index,
+    name: fruit
+  };
+});
+console.log(b);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -169,7 +183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51086" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56315" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
