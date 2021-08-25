@@ -118,84 +118,36 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var numbers = [1, 2, 3, 4];
-var fruits = ['Apple', 'Banana', 'Cherry']; //element(요소)
+var userAge = {
+  // key: value
+  name: 'Heropy',
+  age: 85
+};
+var userEmail = {
+  name: 'Heropy',
+  email: 'thesecon@gmail.com'
+};
+var user = Object.assign({}, userAge, userEmail);
+console.log(user);
+console.log(userAge);
+console.log(user === userAge);
+var a = {
+  k: 123
+};
+var b = {
+  k: 123
+};
+console.log(a === b); // prototype 메소드가 아니면 정적 메소드가 아니다~~~~
 
-console.log(numbers);
-console.log(fruits);
-console.log(numbers[1]); // 인덱스 인덱싱
+var keys = Object.keys(user); // key들만 추출해서 새로운 배열로 만들어주는 메소드
 
-numbers.stay = 3;
-console.log(numbers); // .length
-//prototype은 리터럴로 생성한 것에 바로 사용할 수 있다.
+console.log(keys); // ['name', 'age', 'email']
 
-console.log([1, 2].length);
-console.log([], length); //이것을 통해서 배열이 채워져 있는지 확인한다고 한다.
-// .concat()
-
-console.log(numbers.concat(fruits)); //합쳐주지만 원본 배열 데이터에는 영향이 없음
-
-console.log(numbers);
-console.log(fruits); // .forEach()
-//return 값이 없다.
-
-fruits.forEach(function (element, index, array) {
-  console.log(element, index, array);
-}); // .map()
-//return 값으로 배열을 만들어 줌
-
-var a = fruits.forEach(function (fruit, index) {
-  console.log("".concat(fruit, "-").concat(index));
+console.log(user['email']);
+var values = keys.map(function (key) {
+  return user[key];
 });
-console.log(a);
-var b = fruits.map(function (fruit, index) {
-  return {
-    id: index,
-    name: fruit
-  };
-});
-console.log(b); // .filter()
-
-var c = numbers.map(function (number) {
-  return number < 3;
-});
-console.log(c);
-var d = numbers.filter(function (number) {
-  return number < 3;
-});
-console.log(d); // .find() .findIndex()
-
-var e = fruits.find(function (fruit) {
-  return /^C/.test(fruit);
-});
-console.log(e);
-var f = fruits.findIndex(function (fruit) {
-  return /^C/.test(fruit);
-});
-console.log(f); // .includes()
-
-var g = numbers.includes(3);
-console.log(g);
-var h = fruits.includes('HEROPY');
-console.log(h); // .push() .unshift()
-// 원본 수정됨 주의!
-
-numbers.push(5);
-console.log(numbers);
-numbers.unshift(0);
-console.log(numbers); // .reverse()
-// 원본 수정됨 주의!
-
-numbers.reverse();
-fruits.reverse();
-console.log(numbers);
-console.log(fruits); // .splice()
-// 원본 수정됨 주의!
-
-numbers.splice(2, 1);
-console.log(numbers);
-numbers.splice(2, 2, 999);
-console.log(numbers);
+console.log(values);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -224,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61265" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65484" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
