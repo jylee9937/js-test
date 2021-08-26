@@ -118,29 +118,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var _console;
-
-// 전개 연산자 (Spread)
-var fruits = ['Apple', 'Banana', 'Cherry', 'Orange'];
-console.log(fruits);
-
-(_console = console).log.apply(_console, fruits); //  console.log('Apple', 'Banana', 'Cherry')
-
-
-var toObject = function toObject(a, b) {
-  for (var _len = arguments.length, c = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    c[_key - 2] = arguments[_key];
-  }
-
-  return {
-    a: a,
-    b: b,
-    c: c
-  };
-};
-
-console.log(toObject.apply(void 0, fruits));
-console.log(toObject(fruits[0], fruits[1], fruits[2]));
+// 데이터 불변성(Immutability)
+// 원시 데이터: String, Number, Boolean, undefined, null
+// 참조형 데이터: Object, Array, Function
+var a = 1;
+var b = 4;
+console.log(a, b, a === b);
+b = a;
+console.log(a, b, a === b);
+a = 7;
+console.log(a, b, a === b);
+var c = 1;
+console.log(b, c, b === c); // 이거는 좀 의외인데?
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -169,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57658" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60202" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
