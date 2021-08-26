@@ -1,13 +1,32 @@
-// 데이터 불변성(Immutability)
-// 원시 데이터: String, Number, Boolean, undefined, null
-// 참조형 데이터: Object, Array, Function
+import _ from 'lodash'
 
-let a = 1
-let b = 4
-console.log(a, b, a === b)
-b = a
-console.log(a, b, a === b)
-a = 7
-console.log(a, b, a === b)
-let c = 1
-console.log(b, c, b === c) // 이거는 좀 의외인데?
+// 얕은 복사(Shallow copy), 깊은 복사(Deep copy)
+
+const user = {
+    name: 'Heropy',
+    age: 85,
+    emails: ['thesecon@gmail.com']
+}
+
+// const copyUser = user
+
+// 얕은 복사
+// const copyUser = {...user}
+// const copyUser = Object.assign({}, user)
+
+// 깊은 복사
+const copyUser = _.cloneDeep(user)
+
+console.log(copyUser === user)
+
+user.age = 22
+console.log('user', user)
+console.log('copyUser', copyUser)
+
+console.log('-----')
+console.log('-----')
+
+user.emails.push('neo@zillinks.com')
+console.log(copyUser.emails === user.emails)
+console.log('user', user)
+console.log('copyUser', copyUser)
