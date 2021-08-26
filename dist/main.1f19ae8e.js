@@ -118,36 +118,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var userAge = {
-  // key: value
+// 구조 분해 할당 (Destructuring assignment)
+// 비구조화 할당
+var user = {
   name: 'Heropy',
-  age: 85
-};
-var userEmail = {
-  name: 'Heropy',
+  age: 85,
   email: 'thesecon@gmail.com'
 };
-var user = Object.assign({}, userAge, userEmail);
+var heropy = user.name,
+    age = user.age,
+    email = user.email,
+    _user$address = user.address,
+    address = _user$address === void 0 ? 'Korea' : _user$address; // E.g, user.address
+
 console.log(user);
-console.log(userAge);
-console.log(user === userAge);
-var a = {
-  k: 123
-};
-var b = {
-  k: 123
-};
-console.log(a === b); // prototype 메소드가 아니면 정적 메소드가 아니다~~~~
-
-var keys = Object.keys(user); // key들만 추출해서 새로운 배열로 만들어주는 메소드
-
-console.log(keys); // ['name', 'age', 'email']
-
-console.log(user['email']);
-var values = keys.map(function (key) {
-  return user[key];
-});
-console.log(values);
+console.log("\uC0AC\uC6A9\uC790\uC758 \uC774\uB984\uC740 ".concat(heropy, "\uC785\uB2C8\uB2E4."));
+console.log("".concat(heropy, "\uC758 \uB098\uC774\uB294 ").concat(age, "\uC138 \uC785\uB2C8\uB2E4."));
+console.log("".concat(heropy, "\uC758 \uC774\uBA54\uC77C \uC8FC\uC18C\uB294 ").concat(email, "\uC785\uB2C8\uB2E4."));
+console.log(address);
+var fruits = ['Apple', 'Banana', 'Cherry'];
+var c = fruits[2],
+    d = fruits[3];
+console.log(c, d);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -176,7 +168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65484" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62634" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

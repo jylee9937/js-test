@@ -1,29 +1,20 @@
-const userAge = {
-    // key: value
+// 구조 분해 할당 (Destructuring assignment)
+// 비구조화 할당
+
+const user = {
     name: 'Heropy',
-    age: 85
-}
-const userEmail = {
-    name: 'Heropy',
+    age: 85,
     email: 'thesecon@gmail.com'
 }
+const {name: heropy, age, email, address = 'Korea' } = user
+// E.g, user.address
 
-const user = Object.assign({}, userAge, userEmail)
 console.log(user)
-console.log(userAge)
-console.log(user === userAge)
+console.log(`사용자의 이름은 ${heropy}입니다.`)
+console.log(`${heropy}의 나이는 ${age}세 입니다.`)
+console.log(`${heropy}의 이메일 주소는 ${email}입니다.`)
+console.log(address)
 
-const a = { k: 123}
-const b = { k: 123}
-console.log(a === b)
-
-// prototype 메소드가 아니면 정적 메소드가 아니다~~~~
-
-const keys = Object.keys(user) // key들만 추출해서 새로운 배열로 만들어주는 메소드
-console.log(keys)
-// ['name', 'age', 'email']
-
-console.log(user['email'])
-
-const values = keys.map(key => user[key])
-console.log(values)
+const fruits = ['Apple', 'Banana', 'Cherry']
+const [, , c, d] = fruits
+console.log(c, d)
