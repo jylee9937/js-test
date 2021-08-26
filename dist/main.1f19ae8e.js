@@ -118,28 +118,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// 구조 분해 할당 (Destructuring assignment)
-// 비구조화 할당
-var user = {
-  name: 'Heropy',
-  age: 85,
-  email: 'thesecon@gmail.com'
-};
-var heropy = user.name,
-    age = user.age,
-    email = user.email,
-    _user$address = user.address,
-    address = _user$address === void 0 ? 'Korea' : _user$address; // E.g, user.address
+var _console;
 
-console.log(user);
-console.log("\uC0AC\uC6A9\uC790\uC758 \uC774\uB984\uC740 ".concat(heropy, "\uC785\uB2C8\uB2E4."));
-console.log("".concat(heropy, "\uC758 \uB098\uC774\uB294 ").concat(age, "\uC138 \uC785\uB2C8\uB2E4."));
-console.log("".concat(heropy, "\uC758 \uC774\uBA54\uC77C \uC8FC\uC18C\uB294 ").concat(email, "\uC785\uB2C8\uB2E4."));
-console.log(address);
-var fruits = ['Apple', 'Banana', 'Cherry'];
-var c = fruits[2],
-    d = fruits[3];
-console.log(c, d);
+// 전개 연산자 (Spread)
+var fruits = ['Apple', 'Banana', 'Cherry', 'Orange'];
+console.log(fruits);
+
+(_console = console).log.apply(_console, fruits); //  console.log('Apple', 'Banana', 'Cherry')
+
+
+var toObject = function toObject(a, b) {
+  for (var _len = arguments.length, c = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    c[_key - 2] = arguments[_key];
+  }
+
+  return {
+    a: a,
+    b: b,
+    c: c
+  };
+};
+
+console.log(toObject.apply(void 0, fruits));
+console.log(toObject(fruits[0], fruits[1], fruits[2]));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -168,7 +169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62634" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
