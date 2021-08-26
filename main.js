@@ -1,32 +1,11 @@
-import _ from 'lodash'
+import _ from 'lodash' //From `node_modules`!
+import getType from './getType' //getType.js // DEFAULT 통로
+import{ random } from './getRandom' //getRandom.js //NAMEED 통로
 
-// 얕은 복사(Shallow copy), 깊은 복사(Deep copy)
+import { students } from './practiceExport'
+import student from './practiceExport'
 
-const user = {
-    name: 'Heropy',
-    age: 85,
-    emails: ['thesecon@gmail.com']
-}
-
-// const copyUser = user
-
-// 얕은 복사
-// const copyUser = {...user}
-// const copyUser = Object.assign({}, user)
-
-// 깊은 복사
-const copyUser = _.cloneDeep(user)
-
-console.log(copyUser === user)
-
-user.age = 22
-console.log('user', user)
-console.log('copyUser', copyUser)
-
-console.log('-----')
-console.log('-----')
-
-user.emails.push('neo@zillinks.com')
-console.log(copyUser.emails === user.emails)
-console.log('user', user)
-console.log('copyUser', copyUser)
+console.log(_.camelCase('the hello world'))
+console.log(getType([1, 2, 3]))
+console.log(random(), random())
+student(students)

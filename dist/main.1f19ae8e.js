@@ -19370,37 +19370,71 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"node_modules/buffer/index.js"}],"main.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"getType.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(data) {
+  return Object.prototype.toString.call(data).slice(8, -1);
+}
+},{}],"getRandom.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.random = random;
+
+function random() {
+  return Math.floor(Math.random() * 10);
+}
+},{}],"practiceExport.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = student;
+exports.students = void 0;
+
+function student(a) {
+  console.log('student is ', a);
+}
+
+var students = {
+  name: jj,
+  address: aa
+};
+exports.students = students;
+},{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
+var _getType = _interopRequireDefault(require("./getType"));
+
+var _getRandom = require("./getRandom");
+
+var _practiceExport = _interopRequireWildcard(require("./practiceExport"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// 얕은 복사(Shallow copy), 깊은 복사(Deep copy)
-var user = {
-  name: 'Heropy',
-  age: 85,
-  emails: ['thesecon@gmail.com']
-}; // const copyUser = user
-// 얕은 복사
-// const copyUser = {...user}
-// const copyUser = Object.assign({}, user)
-// 깊은 복사
-
-var copyUser = _lodash.default.cloneDeep(user);
-
-console.log(copyUser === user);
-user.age = 22;
-console.log('user', user);
-console.log('copyUser', copyUser);
-console.log('-----');
-console.log('-----');
-user.emails.push('neo@zillinks.com');
-console.log(copyUser.emails === user.emails);
-console.log('user', user);
-console.log('copyUser', copyUser);
-},{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+//From `node_modules`!
+//getType.js // DEFAULT 통로
+//getRandom.js //NAMEED 통로
+console.log(_lodash.default.camelCase('the hello world'));
+console.log((0, _getType.default)([1, 2, 3]));
+console.log((0, _getRandom.random)(), (0, _getRandom.random)());
+(0, _practiceExport.default)(_practiceExport.students);
+},{"lodash":"node_modules/lodash/lodash.js","./getType":"getType.js","./getRandom":"getRandom.js","./practiceExport":"practiceExport.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -19428,7 +19462,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61151" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60953" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
