@@ -19370,71 +19370,70 @@ var define;
   }
 }.call(this));
 
-},{"buffer":"node_modules/buffer/index.js"}],"getType.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = _default;
-
-function _default(data) {
-  return Object.prototype.toString.call(data).slice(8, -1);
-}
-},{}],"getRandom.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.random = random;
-
-function random() {
-  return Math.floor(Math.random() * 10);
-}
-},{}],"practiceExport.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = student;
-exports.students = void 0;
-
-function student(a) {
-  console.log('student is ', a);
-}
-
-var students = {
-  name: jj,
-  address: aa
-};
-exports.students = students;
-},{}],"main.js":[function(require,module,exports) {
+},{"buffer":"node_modules/buffer/index.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
-var _getType = _interopRequireDefault(require("./getType"));
-
-var _getRandom = require("./getRandom");
-
-var _practiceExport = _interopRequireWildcard(require("./practiceExport"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //From `node_modules`!
-//getType.js // DEFAULT 통로
-//getRandom.js //NAMEED 통로
-console.log(_lodash.default.camelCase('the hello world'));
-console.log((0, _getType.default)([1, 2, 3]));
-console.log((0, _getRandom.random)(), (0, _getRandom.random)());
-(0, _practiceExport.default)(_practiceExport.students);
-},{"lodash":"node_modules/lodash/lodash.js","./getType":"getType.js","./getRandom":"getRandom.js","./practiceExport":"practiceExport.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var usersA = [{
+  userId: '1',
+  name: 'HEROPY'
+}, {
+  userId: '2',
+  name: 'Neo'
+}];
+var usersB = [{
+  userId: '1',
+  name: 'HEROPY'
+}, {
+  userId: '3',
+  name: 'Amy'
+}];
+var usersC = usersA.concat(usersB);
+console.log('concat', usersC);
+console.log('uniqBy', _lodash.default.uniqBy(usersC, 'userId')); // 이미 만들어진 배열에서 고유한 것만 남기는 방식
+
+var usersD = _lodash.default.unionBy(usersA, usersB, 'userId'); // 고유한 것만으로 배열을 합치는 방식
+
+
+console.log('unionBy', usersD);
+var users = [{
+  userId: '1',
+  name: 'HEROPY'
+}, {
+  userId: '2',
+  name: 'Neo'
+}, {
+  userId: '3',
+  name: 'Amy'
+}, {
+  userId: '4',
+  name: 'Evan'
+}, {
+  userId: '5',
+  name: 'Lewis'
+}];
+
+var foundUser = _lodash.default.find(users, {
+  name: 'Amy'
+});
+
+var foundUserIndex = _lodash.default.findIndex(users, {
+  name: 'Amy'
+});
+
+console.log(foundUser);
+console.log(foundUserIndex);
+
+_lodash.default.remove(users, {
+  name: 'HEROPY'
+});
+
+console.log(users);
+},{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -19462,7 +19461,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60953" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53958" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
