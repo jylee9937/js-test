@@ -1,58 +1,23 @@
-import _ from 'lodash' //From `node_modules`!
+// JSON (JavaScript Object Notation)
+// 자바스크립트의 객체 표기법
 
-const usersA = [
-    {
-        userId: '1',
-        name: 'HEROPY'
-    },
-    {
-        userId: '2',
-        name: 'Neo'
-    }
-]
-const usersB = [
-    {
-        userId: '1',
-        name: 'HEROPY'
-    },
-    {
-        userId: '3',
-        name: 'Amy'
-    }
-]
-const usersC = usersA.concat(usersB)
-console.log('concat', usersC)
-console.log('uniqBy', _.uniqBy(usersC, 'userId')) // 이미 만들어진 배열에서 고유한 것만 남기는 방식
-const usersD = _.unionBy(usersA, usersB, 'userId') // 고유한 것만으로 배열을 합치는 방식
-console.log('unionBy', usersD)
+import myData from './myData.json'
 
-const users = [
-    {
-        userId: '1', 
-        name: 'HEROPY'
-    },
-    {
-        userId: '2', 
-        name: 'Neo'
-    },
-    {
-        userId: '3', 
-        name: 'Amy'
-    },
-    {
-        userId: '4', 
-        name: 'Evan'
-    },
-    {
-        userId: '5', 
-        name: 'Lewis'
-    }
-]
+console.log(myData)
 
-const foundUser = _.find(users, {  name: 'Amy' })
-const foundUserIndex = _.findIndex(users, {name: 'Amy'})
-console.log(foundUser)
-console.log(foundUserIndex)
+const user = {
+  name: 'HEROPY',
+  age: 85,
+  emails: [
+    'thesecon@gmail.com',
+    'neo@zillinks.com'
+  ]
+}
+console.log('user', user)
 
-_.remove(users, {name: 'HEROPY'})
-console.log(users)
+const str = JSON.stringify(user)
+console.log('str', str)
+console.log(typeof str)
+
+const obj = JSON.parse(str)
+console.log('obj', obj)
