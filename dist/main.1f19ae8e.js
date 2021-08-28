@@ -117,35 +117,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"myData.json":[function(require,module,exports) {
-module.exports = {
-  "string": "HEROPY",
-  "numver": 123,
-  "boolean": true,
-  "null": null
-};
-},{}],"main.js":[function(require,module,exports) {
-"use strict";
-
-var _myData = _interopRequireDefault(require("./myData.json"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-console.log(_myData.default);
+})({"main.js":[function(require,module,exports) {
 var user = {
   name: 'HEROPY',
   age: 85,
   emails: ['thesecon@gmail.com', 'neo@zillinks.com']
-};
-console.log('user', user);
-var str = JSON.stringify(user);
-console.log('str', str);
-console.log(_typeof(str));
+}; // localStorage는 개발자도구의 어플리케이션탭에서 확인할 수 있음
+// localStorage MDN 구글에 검색하기
+// localStorage VS Session Storage
+
+localStorage.setItem('user', JSON.stringify(user)); // JSON 형태로 저장함
+// 모든 데이터를 string타입으로 저장해야 의도한대로 저장됨
+
+console.log(JSON.parse(localStorage.getItem('user'))); // localStorage.removeItem('user') // 삭제하기
+// 수정하고 싶다면?
+
+var str = localStorage.getItem('user');
 var obj = JSON.parse(str);
-console.log('obj', obj);
-},{"./myData.json":"myData.json"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+obj.age = 22;
+console.log(obj);
+localStorage.setItem('user', JSON.stringify(obj)); // Lodash를 이용해 만들어진 Lowdb를 활용하면 이렇게 원시적인 방법이 아니게 구현할 수 있다.
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -173,7 +165,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50107" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53639" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
